@@ -1,3 +1,8 @@
+# Odd Café
+My personal blog. Created using [Netlify CMS Starter](https://www.netlifycms.org/) with some code borrowed from [Overreacted.io](https://github.com/gaearon/overreacted.io).
+
+Below are the original docs from Netlify.
+
 # Gatsby + Netlify CMS Starter
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)

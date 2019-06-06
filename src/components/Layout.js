@@ -1,54 +1,153 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from 'react';
+import { Link } from 'gatsby';
+import Toggle from './Toggle';
+import Helmet from 'react-helmet';
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-  return (
-    <div>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+import { rhythm, scale } from '../utils/typography';
+import sun from '../assets/sun.png';
+import moon from '../assets/moon.png';
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        />
+class Layout extends React.Component {
+  state = {
+    theme: null,
+  };
+  componentDidMount() {
+    this.setState({ theme: window.__theme });
+    window.__onThemeChange = () => {
+      this.setState({ theme: window.__theme });
+    };
+  }
+  renderHeader() {
+    const { location, title } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
 
-        <link
-          rel="mask-icon"
-          href="/img/safari-pinned-tab.svg"
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
+    if (location.pathname === rootPath) {
+      return (
+        <h1
+          style={{
+            ...scale(1.25),
+            marginBottom: 0,
+            marginTop: 0,
+          }}
+        >
+          <Link
+            style={{
+              fontFamily: 'Pacifico',
+              fontWeight: 'bolder',
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'var(--textSiteTitle)',
+            }}
+            to={'/'}
+          >
+            {title}
+          </Link>
+        </h1>
+      );
+    } else {
+      return (
+        <h2
+          style={{
+            ...scale(1),
+            marginTop: 0,
+            marginBottom: 0,
+            height: 42, // because
+            lineHeight: '2.625rem',
+          }}
+        >
+          <Link
+            style={{
+              fontFamily: 'Pacifico',
+              fontWeight: 'bolder',
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: 'var(--textSiteTitle)',
+            }}
+            to={'/'}
+          >
+            {title}
+          </Link>
+        </h2>
+      );
+    }
+  }
+  render() {
+    const { children } = this.props;
 
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
-      </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
-  )
+    return (
+      <div
+        style={{
+          color: 'var(--textNormal)',
+          background: 'var(--bg)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+          minHeight: '100vh',
+        }}
+      >
+        <Helmet
+          meta={[
+            {
+              name: 'theme-color',
+              content: this.state.theme === 'light' ? '#ffa8c5' : '#282c35',
+            },
+          ]}
+        />
+        <div
+          style={{
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: rhythm(24),
+            padding: `2.625rem ${rhythm(3 / 4)}`,
+          }}
+        >
+          <header
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: '2.625rem',
+            }}
+          >
+            {this.renderHeader()}
+            {this.state.theme !== null ? (
+              <Toggle
+                icons={{
+                  checked: (
+                    <img
+                      alt="toggle dark theme"
+                      src={moon}
+                      width="16"
+                      height="16"
+                      role="presentation"
+                      style={{ pointerEvents: 'none' }}
+                    />
+                  ),
+                  unchecked: (
+                    <img
+                      alt="toggle day theme"
+                      src={sun}
+                      width="16"
+                      height="16"
+                      role="presentation"
+                      style={{ pointerEvents: 'none' }}
+                    />
+                  ),
+                }}
+                checked={this.state.theme === 'dark'}
+                onChange={e =>
+                  window.__setPreferredTheme(
+                    e.target.checked ? 'dark' : 'light'
+                  )
+                }
+              />
+            ) : (
+              <div style={{ height: '24px' }} />
+            )}
+          </header>
+          {children}
+        </div>
+      </div>
+    );
+  }
 }
 
-export default TemplateWrapper
+export default Layout;
