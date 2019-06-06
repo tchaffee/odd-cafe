@@ -5,7 +5,7 @@ import Bio from '../components/Bio';
 import Footer from '../components/Footer';
 import Layout from '../components/Layout';
 import React from 'react';
-// import SEO from '../components/SEO';
+import SEO from '../components/SEO';
 import get from 'lodash/get';
 // import { rhythm } from '../utils/typography';
 import BlogRoll from '../components/BlogRoll';
