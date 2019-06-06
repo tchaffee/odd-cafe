@@ -21,7 +21,7 @@ class Layout extends React.Component {
     const { location, title } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
 
-    if (location.pathname === rootPath) {
+    if ( !location || location.pathname === rootPath) {
       return (
         <h1
           style={{

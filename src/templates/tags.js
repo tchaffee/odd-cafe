@@ -2,12 +2,14 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import get from 'lodash/get';
 
 class TagRoute extends React.Component {
   render() {
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
+      <li style={{listStyle: 'none'}} key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
           <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
         </Link>
@@ -21,7 +23,7 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <Layout>
+      <Layout location={this.props.location} title={siteTitle}>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
