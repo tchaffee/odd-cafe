@@ -1,6 +1,7 @@
 ---
 templateKey: index-page
 title: Odd Café
+date: 2019-06-01T9:18:12.276Z
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: A Personal blog by Todd Chaffee

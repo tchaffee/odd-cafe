@@ -1,11 +1,12 @@
 ---
 templateKey: blog-post
 title: JavaScript and Scope II
-date: 2019-06-03T22:18:12.276Z
+date: 2019-06-03T12:35:15.276Z
 description: Scope in Javascript, part 2
 featuredpost: false
 featuredimage: /img/scope.jpg
 tags:
+  - javascript-scope-series
   - javascript
   - javascript-basics
   - programming

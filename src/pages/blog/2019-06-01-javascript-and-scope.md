@@ -6,6 +6,7 @@ description: Scope in Javascript, part 1
 featuredpost: false
 featuredimage: /img/scope.jpg
 tags:
+  - javascript-scope-series
   - javascript
   - javascript-basics
   - programming
