@@ -86,8 +86,11 @@ class Layout extends React.Component {
         <Helmet
           meta={[
             {
+              // TODO: Annoying that color defs cannot come from global.css.
               name: 'theme-color',
-              content: this.state.theme === 'light' ? '#ffa8c5' : '#282c35',
+              content: this.state.theme === 'light' 
+                ? '#B8C4EA' 
+                : '#253D8F',
             },
           ]}
         />
