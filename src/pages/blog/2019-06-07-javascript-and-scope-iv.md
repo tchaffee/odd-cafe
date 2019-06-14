@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: JavaScript and Scope IV
+title: JavaScript and Scope IV - Blocks
 date: 2019-06-07T14:15:15.276Z
 description: Scope in Javascript, part 4
 featuredpost: false
@@ -16,7 +16,7 @@ In [JavaScript and Scope I, II, and III](/tags/javascript-scope-series/) we look
 
 For example, we often declare variables in a `for` loop with a block.
 
-```js
+```js{1,3}
 var buzz = 3;
 
 for (var buzz = 1; buzz < 10; buzz++) {
@@ -35,7 +35,7 @@ When you run the code above, you'll see there is only one `buzz` variable. The o
 
 What about `if` statements?
 
-```js
+```js{1,4}
 var cute = 'not';
 
 if (true) {
@@ -52,7 +52,7 @@ Again, there is only one `cute` variable and the final value of the variable in 
 
 Both of the examples above are the *opposite* of what we saw for functions. Functions create a new scope for variables. Blocks do *not* create a new scope for variables declared with `var`.
 
-Did you know you can declare blocks all on their own without using an `if` or `for` statement or something else? I will leave you with this one final very simple example to help you memorize the rule: *blocks do not create a new scope for variables declared with `var`*.
+Did you know you can declare blocks all on their own without using an `if` or `for` statement or anything else? I will leave you with this one final very simple example to help you memorize the rule: *blocks do not create a new scope for variables declared with `var`*.
 
 ```js
 var toto = 'wants';
