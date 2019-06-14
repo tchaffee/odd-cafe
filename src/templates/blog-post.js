@@ -39,6 +39,8 @@ class BlogPostTemplate extends React.Component {
     const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
       `https://blog.toddbiz.com${enSlug}`
     )}`;
+    const image = this.props.data.markdownRemark.frontmatter.featuredimage;
+
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -47,6 +49,7 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.excerpt}
           slug={post.fields.slug}
+          image={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
         />
         <main>
           <article>
@@ -154,6 +157,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 600, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         slug

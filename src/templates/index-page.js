@@ -11,12 +11,15 @@ import get from 'lodash/get';
 import BlogRoll from '../components/BlogRoll';
 
 class BlogIndexTemplate extends React.Component {
+
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
-
+    const image = this.props.data.markdownRemark.frontmatter.image;
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO />
+        <SEO image={
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        } />
         <aside>
           <Bio />
         </aside>
