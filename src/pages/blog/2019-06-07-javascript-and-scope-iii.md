@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: JavaScript and Scope III
+title: JavaScript and Scope III - Arrow Functions
 date: 2019-06-07T12:35:15.276Z
 description: Scope in Javascript, part 3
 featuredpost: false
@@ -12,18 +12,20 @@ tags:
   - programming
   - scope
 ---
-As you saw in the [JavaScript and Scope I](/blog/2019-06-01-javascript-and-scope/) and [JavaScript and Scope II](/blog/2020-06-03-javascript-and-scope-ii/), functions create a new scope which will hide the value of variables in a higher scope, such as global scope.
+As you saw in the [JavaScript and Scope I - Intro](/blog/2019-06-01-javascript-and-scope/) and [JavaScript and Scope II - Functions](/blog/2020-06-03-javascript-and-scope-ii/), functions create a new scope which will hide or shadow the value of variables in a higher scope, such as global scope.
 
 What about arrow functions? Let's go back to our first ever code example and change it to an arrow function.
 
-```js
+```js{1}
 var bar = () => {
   var foo = 2;
-  console.log(foo); // 2
+  console.log(foo); // logs 2
 }
 
 bar();
 
+// Edit and run the code if you don't remember
+// what the next line results in.
 console.log(foo);
 ```
 <div class="jsfiddle-link">
@@ -32,7 +34,7 @@ console.log(foo);
 
 If you run the code above, you'll see that scope behaves the same as a regular function declaration: The `foo` variable only exists inside the function scope, and does not exist in the global scope.
 
-The same is true of all the other examples given so far. If you have a few minutes, go ahead and edit every code example from the previous two articles and change them to use only arrow functions so you can see for yourself. Use the first example above as a guide for how to change a regular function declaration to an arrow function.
+The same is true of all the other examples given so far. If you want to see for yourself and have a few minutes, go ahead and edit every code example from the previous two articles and change them to use only arrow functions. Use the example above as a guide for how to change a regular function declaration to an arrow function. In each case, you will need to declare a variable to give the arrow function a name. Here are all the examples from the last two articles.
 
 <div class="jsfiddle-link">
   <a href="https://jsfiddle.net/tchaffee/0oy9jc1n/2/" target="_blank">Example 2, Edit in JSFiddle</a>
