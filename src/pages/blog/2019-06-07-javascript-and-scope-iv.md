@@ -4,7 +4,7 @@ title: JavaScript and Scope IV - Blocks
 date: 2019-06-07T14:15:15.276Z
 description: Scope in Javascript, part 4
 featuredpost: false
-featuredimage: /img/scope.jpg
+featuredimage: /img/javascript-scope-iv-blocks-og-image.png
 tags:
   - javascript-scope-series
   - javascript
