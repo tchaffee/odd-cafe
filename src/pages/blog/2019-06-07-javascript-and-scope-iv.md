@@ -12,7 +12,7 @@ tags:
   - programming
   - scope
 ---
-In [JavaScript and Scope I, II, and III](/tags/javascript-scope-series/) we looked at scope and *functions*. What about other statements that use blocks? Blocks being sections of code enclosed by curly brackets `{}`.
+In JavaScript and Scope articles [I - Intro](/blog/2019-06-01-javascript-and-scope/), [II - Functions](/blog/2019-06-03-javascript-and-scope-ii/), and [III - Arrow Functions](/blog/2019-06-07-javascript-and-scope-iii/) we looked at scope and *functions*. What about other statements that use blocks? Blocks being sections of code enclosed by curly brackets `{}`.
 
 For example, we often declare variables in a `for` loop with a block.
 
