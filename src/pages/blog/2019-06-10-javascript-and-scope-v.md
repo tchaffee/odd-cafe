@@ -4,7 +4,7 @@ title: JavaScript and Scope V - let and const
 date: 2019-06-10T11:15:15.276Z
 description: Scope in Javascript, part 5 - Let
 featuredpost: false
-featuredimage: /img/scope.jpg
+featuredimage: /img/javascript-scope-v-og-image.png
 tags:
   - javascript-scope-series
   - javascript
