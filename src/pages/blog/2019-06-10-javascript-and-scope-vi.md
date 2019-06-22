@@ -4,7 +4,7 @@ title: JavaScript and Scope VI - Closures
 date: 2019-06-10T14:33:15.276Z
 description: Scope in Javascript, part 6
 featuredpost: false
-featuredimage: /img/scope.jpg
+featuredimage: /img/javascript-scope-closures-og-image.png
 tags:
   - javascript-scope-series
   - javascript

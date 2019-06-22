@@ -4,7 +4,7 @@ title: JavaScript and Scope VIII - Improved Closures
 date: 2019-06-13T16:28:15.276Z
 description: Scope in Javascript, part 8, improved closures
 featuredpost: false
-featuredimage: /img/scope.jpg
+featuredimage: /img/javascript-scope-closures-og-image.png
 tags:
   - javascript-scope-series
   - javascript

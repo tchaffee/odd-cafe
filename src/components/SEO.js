@@ -19,6 +19,7 @@ const query = graphql`
   }
 `;
 
+// TODO: Remove the hard-coded og:image:width and height.
 function SEO({ meta, image, title, description, slug, lang = 'en' }) {
   return (
     <StaticQuery
@@ -28,6 +29,7 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
         const metaDescription = description || siteMetadata.description;
         const metaImage = image ? `${siteMetadata.siteUrl}${image}` : null;
         const url = `${siteMetadata.siteUrl}${slug}`;
+
         return (
           <Helmet
             htmlAttributes={{ lang }}
@@ -79,6 +81,14 @@ function SEO({ meta, image, title, description, slug, lang = 'en' }) {
                       {
                         property: 'og:image',
                         content: metaImage,
+                      },
+                      {
+                        property: 'og:image:width',
+                        content: '600',
+                      },
+                      {
+                        property: 'og:image:height',
+                        content: '314',
                       },
                       {
                         name: 'twitter:image',
