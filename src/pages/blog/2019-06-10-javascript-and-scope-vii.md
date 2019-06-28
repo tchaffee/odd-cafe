@@ -97,4 +97,4 @@ funcs[3](); // logs 3
 
 In the code above, we take advantage of the fact that functions create a new scope. Every time the outer `makeLog` function runs, it creates a new and separate `j` variable in its scope. It then declares and returns an inner function that logs that local `j` variable. Even when the `makeLog` function finishes running, that returned function will still reference the unique `j` variable created each time `makeLog` runs. Because `makeLog` ran three times, there are 3 separate `j` variables.
 
-The above method isn't just a way to learn how closures work. You will find variations of it in pre-ES6 code for things like `setTimer` inside a loop and event handling for HTML elements.
+Note that for learning purposes the above code is intentionally more verbose than needed, and will be improved upon in [JavaScript and Scope VIII - Improved Closures](/blog/2019-06-13-javascript-and-scope-viii/).
