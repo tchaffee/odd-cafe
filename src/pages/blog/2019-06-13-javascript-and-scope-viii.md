@@ -112,6 +112,4 @@ funcs[3](); // logs 3
   <a href="https://jsfiddle.net/tchaffee/r48pegko/" target="_blank">Edit in JSFiddle</a>
 </div>
 
-No need to use a closure when we have block level scope.
-
-Keep in mind you will still see variations on the solutions above that use closure, especially in pre-ES6 code. And don't dismiss closures just because we can create block scope. Closures are still common in JavaScript because they have many uses. It's an essential and powerful language feature.
+Don't dismiss closures just because we can create block scope with `let`. You will still see variations on the closure-based solutions above, especially in pre-ES6 code. And the very popular JavaScript module pattern is just one example of the power of closures where `let` is not going to help you at all.
